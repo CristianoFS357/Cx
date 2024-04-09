@@ -1,0 +1,29 @@
+# Função para calcular a soma dos números
+def calcular_soma(a, b):
+    return a + b
+
+# Função para calcular o produto dos números
+def calcular_produto(a, b):
+    return a * b
+
+# Função para calcular o produto escalar dos números
+def calcular_produto_escalar(a, b):
+    return a @ b
+
+# Solicita os números do usuário
+num1 = float(input("Digite o primeiro número: "))
+num2 = float(input("Digite o segundo número: "))
+
+# Calcula a soma
+soma = calcular_soma(num1, num2)
+
+# Calcula o produto
+produto = calcular_produto(num1, num2)
+
+# Calcula o produto escalar
+produto_escalar = calcular_produto_escalar(num1, num2)
+
+# Imprime os resultados
+print("A soma dos números é:", soma)
+print("O produto dos números é:", produto)
+print("O produto escalar dos números é:", produto_escalar)
