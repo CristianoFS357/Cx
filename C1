@@ -1,0 +1,14 @@
+# Inicialize um novo repositório git
+git init
+
+# Adicione todos os arquivos no diretório atual ao staging area
+git add .
+
+# Faça o primeiro commit com uma mensagem descritiva
+git commit -m "Primeiro commit"
+
+# Adicione a URL do repositório remoto 
+git remote add origin <https://github.com/CristianoFS357/Cx.git>
+
+# Envie o código para o repositório remoto na branch principal 
+git push -u origin master
