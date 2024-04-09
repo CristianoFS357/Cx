@@ -1,0 +1,51 @@
+# Função para exibir o menu de opções
+def exibir_menu():
+    print("======= Lista de Tarefas =======")
+    print("1. Adicionar Tarefa")
+    print("2. Ver Tarefas")
+    print("3. Marcar Tarefa como Concluída")
+    print("4. Sair")
+
+# Lista para armazenar as tarefas
+tarefas = []
+
+# Loop principal do programa
+while True:
+    exibir_menu()  # Exibe o menu de opções
+    opcao = input("Selecione uma opção: ")
+
+    if opcao == "1":
+        # Adicionar uma nova tarefa à lista
+        nova_tarefa = input("Digite a nova tarefa: ")
+        tarefas.append({"tarefa": nova_tarefa, "concluida": False})
+        print("Tarefa adicionada com sucesso!")
+
+    elif opcao == "2":
+        # Exibir todas as tarefas
+        if not tarefas:
+            print("Nenhuma tarefa na lista.")
+        else:
+            print("Tarefas:")
+            for i, tarefa in enumerate(tarefas, 1):
+                status = "Concluída" if tarefa["concluida"] else "Pendente"
+                print(f"{i}. {tarefa['tarefa']} - {status}")
+
+    elif opcao == "3":
+        # Marcar uma tarefa como concluída
+        if not tarefas:
+            print("Nenhuma tarefa na lista.")
+        else:
+            numero_tarefa = int(input("Digite o número da tarefa concluída: "))
+            if 1 <= numero_tarefa <= len(tarefas):
+                tarefas[numero_tarefa - 1]["concluida"] = True
+                print("Tarefa marcada como concluída.")
+            else:
+                print("Número de tarefa inválido.")
+
+    elif opcao == "4":
+        # Sair do programa
+        print("Saindo do programa. Até mais!")
+        break
+
+    else:
+        print("Opção inválida. Por favor, selecione uma opção válida.")
