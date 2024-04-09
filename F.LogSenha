@@ -1,0 +1,28 @@
+import hashlib
+
+# Função para criar um hash de senha
+def hash_password(password):
+    # Use o algoritmo SHA-256 para criar o hash da senha
+    hash_object = hashlib.sha256(password.encode())
+    return hash_object.hexdigest()
+
+# Função para verificar se a senha fornecida corresponde ao hash armazenado
+def verify_password(input_password, stored_hash):
+    # Crie um hash da senha fornecida
+    input_hash = hash_password(input_password)
+    # Compare o hash fornecido com o hash armazenado
+    if input_hash == stored_hash:
+        return True
+    else:
+        return False
+
+# Exemplo de uso:
+# Suponha que 'stored_hash' seja o hash armazenado no banco de dados
+stored_hash = hash_password("senha123")
+
+# Verifique se a senha fornecida está correta
+input_password = input("Digite a senha: ")
+if verify_password(input_password, stored_hash):
+    print("Senha correta. Acesso concedido!")
+else:
+    print("Senha incorreta. Acesso negado!")
